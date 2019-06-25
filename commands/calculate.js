@@ -24,7 +24,7 @@ exports.run = (bot, message, args, prefix) => {
         .setColor('RANDOM')
         .addField("**Input:**", question, true)
         .addField("**Output:**", answer)
-        .setFooter(`-`)
+        .setFooter(`Image made by LeolaniLiaMay#4293`)
 
     message.channel.send({
         embed
