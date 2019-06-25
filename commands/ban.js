@@ -22,8 +22,8 @@ exports.run = (bot, message, args, prefix) => {
     .addField("Reason", bReason)
     .setfooter("Bant Hammer'd");
 
-    let incidentchannel = message.guild.channels.find(`name`, "incidents");
-    if(!incidentchannel) return message.channel.send("I'm sorry, I can't find the channel I need. Please make an #incidents channel.");
+    let incidentchannel = message.guild.channels.find(`name`, "log");
+    if(!incidentchannel) return message.channel.send("I'm sorry, I can't find the channel I need. Please make an #log channel.");
 
     message.guild.member(bUser).ban(bReason);
     incidentchannel.send(banEmbed);
