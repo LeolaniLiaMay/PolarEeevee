@@ -5,13 +5,13 @@ module.exports.run = async (bot, message, args) => {
   //!addrole @andrew Dog Person
   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry pal, you can't do that.");
   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
-  if(!rMember) return message.reply("Couldn't find that user, yo.");
+  if(!rMember) return message.reply("Either that user was mistyped or they are no longer in the server.");
   let role = args.join(" ").slice(22);
-  if(!role) return message.reply("Specify a role!");
-  let gRole = message.gould.roles.find("name", role);
-  if(!gRole) return message.reply("Couldn't find that role.");
+  if(!role) return message.reply("See, in order for me to add a role to someone, you have to actually _specify_ a role.");
+  let gRole = message.guild.roles.find("name", role);
+  if(!gRole) return message.reply("I'm sorry, but that role doesn't appear to exist. Please add it first.");
 
-  if(rMember.roles.has(gRole.id)) return message.reply("They already have that role.");
+  if(rMember.roles.has(gRole.id)) return message.reply("Yeah, uhm... I can't give them something that they already have.");
   await(rMember.addRole(gRole.id));
 
   try{
