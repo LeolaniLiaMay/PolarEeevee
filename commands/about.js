@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
 exports.run = async (bot, message, args) => {
-
 let embed = new Discord.RichEmbed()
 .setTitle("Lil' Eevee")
 .setColor(`#C99567`)
@@ -19,4 +18,5 @@ let embed = new Discord.RichEmbed()
 .addField(`Ping:`, 'new Date().getTime() - message.createdTimestamp + "ms"', true)
 .addFooter(`All Pokémon-related image and information are © 2019 Pokémon. © 1995–2019 Nintendo/Creatures Inc./GAME FREAK inc. Pokémon, Pokémon character names, Nintendo Switch, Nintendo 3DS, Nintendo DS, Wii, Wii U, and WiiWare are trademarks of Nintendo. The YouTube logo is a trademark of Google Inc. Other trademarks are the property of their respective owners.`)
 message.channel.send(embed);
-};
+  
+}
